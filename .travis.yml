@@ -1,15 +1,15 @@
-# Required to run your project under the correct environment.
 language: php
-
-# Versions of PHP you want your project run with.
 php:
-  - 5.4
-  - 5.5
-  - 5.6
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
   - hhvm
+  - nightly
 
 # Commands to be run before your environment runs.
 before_script:
+  - composer update
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
@@ -25,6 +25,3 @@ matrix:
   fast_finish: true
 
 # Customize when the notification emails are sent.
-notifications:
-    on_success: never
-    on_failure: always
